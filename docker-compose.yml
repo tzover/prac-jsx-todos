@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  pra-react:
+    image: ykc-react:1.0
+    container_name: ykc-react
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      # - ./app:/home/app
+      - ./app/src:/home/app/src
+      - ./app/public:/home/app/public
+
+    ports:
+      - 1000:3000
+    stdin_open: true
+    tty: true
